@@ -41,8 +41,6 @@ public class OrderStepDefinitions {
 	public void i_am_on_homepage() throws Exception {
 
 		driver.get(propertiesReader.getValue("url"));
-//		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		
 	}
 
