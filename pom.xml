@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Automation</groupId>
+  <artifactId>BDDWebAutomation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+   <dependencies>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>3.14.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>6.9.0</version>
+		</dependency>
+			
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-junit</artifactId>
+		    <version>6.9.0</version>
+		    <scope>test</scope>
+		</dependency>
+			
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-core</artifactId>
+		    <version>6.9.0</version>
+		</dependency>
+			
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-jvm</artifactId>
+		    <version>6.9.0</version>
+		    <type>pom</type>
+		</dependency>
+			
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-gherkin</artifactId>
+		    <version>6.9.0</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+	    <dependency>
+	         <groupId>io.cucumber</groupId>
+	         <artifactId>cucumber-picocontainer</artifactId>
+	         <version>6.9.0</version>
+	         <scope>test</scope>
+	    </dependency>
+	    
+	    <dependency>
+	          <groupId>io.github.bonigarcia</groupId>
+	          <artifactId>webdrivermanager</artifactId>
+	          <version>3.6.0</version>
+	          <scope>test</scope>
+	    </dependency>
+	    
+	    <!-- log4j2 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j -->
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>2.13.0</version>
+		    <type>pom</type>
+		</dependency>
+
+
+	    <!-- SLF4J Bridge -->
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-slf4j-impl</artifactId>
+		    <version>2.13.0</version>
+		    <scope>test</scope>
+		</dependency>
+
+
+   </dependencies>
+  
+      <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>3.8.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>BDDWebAutomation</projectName>
+                            <outputDirectory>target/cucumber-reports</outputDirectory>
+                            <cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+  
+</project>
